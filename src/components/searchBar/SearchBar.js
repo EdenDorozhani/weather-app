@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import Container from "../Wrapers/Container";
 import classes from "./SearchBar.module.css";
 import { useState } from "react";
 import DropDown from "./DropDown";
@@ -41,8 +40,6 @@ const SearchBar = ({
     valueController(data);
   };
 
-  console.log(dropDownData);
-
   return (
     <div className={classes.searchBarContainer}>
       <form onSubmit={submitHandler}>
@@ -54,7 +51,7 @@ const SearchBar = ({
             className={classNamess}
           />
         </div>
-        {dropDownData.length > 0 && (
+        {dropDownData.length > 0 && value.length > 3 && (
           <DropDown dropDownData={dropDownData} dropDownValue={dropDownValue} />
         )}
       </form>

@@ -27,7 +27,7 @@ const UseGetWeatherData = (inputValue, weatherForecastType, amountOfDays) => {
 
     if (latitude && longitude) {
       const currentLocationData = async () => {
-        const response = await axios
+        await axios
           .get(
             `http://api.weatherapi.com/v1/${weatherForecastType}.json?key=da55ab24169d4911a32143914232807&q=${qValue}&${amountOfDays}`
           )
@@ -39,12 +39,13 @@ const UseGetWeatherData = (inputValue, weatherForecastType, amountOfDays) => {
             }
           })
           .catch((err) => {
+            console.log(err);
             alert(err);
           });
       };
       currentLocationData();
     }
-  }, [latitude, longitude, inputValue]);
+  }, [longitude, latitude, inputValue]);
   return {
     weather: dataWeather,
   };

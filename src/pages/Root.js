@@ -17,7 +17,7 @@ const Root = () => {
     if (!onChangeValue) return;
 
     const dropDownData = async () => {
-      const response = axios(
+      await axios(
         `http://api.weatherapi.com/v1/search.json?key=da55ab24169d4911a32143914232807&q=${onChangeValue}`
       )
         .then((data) => {
@@ -27,7 +27,13 @@ const Root = () => {
           alert(err);
         });
     };
-    dropDownData();
+    const timer = setTimeout(() => {
+      dropDownData();
+    }, 400);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [onChangeValue]);
 
   const getOnSubmitValue = (value) => {
