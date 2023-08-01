@@ -1,0 +1,27 @@
+.weatherInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px;
+}
+
+@media (max-width: 863px) {
+  .weatherInfo {
+    padding: 40px 0px;
+  }
+}
+
+@media (max-width: 595px) {
+  .weatherInfo {
+    flex-direction: column;
+  }
+  .currentWeather {
+    align-items: center;
+  }
+}
+
+@media (max-width: 778px) {
+  .currentWeather {
+    padding: 35px 10px;
+  }
+}

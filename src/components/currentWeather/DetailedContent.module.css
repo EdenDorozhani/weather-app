@@ -1,0 +1,31 @@
+.weatherDetailed {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+@media (max-width: 595px) {
+  .weatherDetailed {
+    align-items: center;
+  }
+}
+
+.weatherDetailed div {
+  display: flex;
+  gap: 15px;
+  padding-top: 15px;
+}
+
+.icon {
+  color: rgb(194, 181, 158);
+  font-size: larger;
+}
+
+.type {
+  color: rgb(194, 181, 158);
+  font-size: larger;
+}
+
+.night {
+  color: rgb(71, 71, 71);
+}

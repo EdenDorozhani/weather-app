@@ -1,0 +1,10 @@
+.weatherContainer {
+  background-color: white;
+  border-radius: 20px;
+  padding: 35px 58px;
+}
+@media (max-width: 595px) {
+  .weatherContainer {
+    text-align: center;
+  }
+}

@@ -1,0 +1,25 @@
+.content p {
+  text-align: center;
+}
+
+.content {
+  background-color: white;
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.content:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.content p {
+  color: orange;
+  padding: 5px;
+  text-align: center;
+}
+
+.night p {
+  color: rgb(85, 85, 255);
+}

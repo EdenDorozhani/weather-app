@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0px;
+}
+
+@media (max-width: 385px) {
+  .header h1 {
+    font-size: 27px;
+  }
+}
+
+.changeTheme {
+  background-color: rgb(255, 145, 0);
+  border: none;
+  border-radius: 8px;
+  width: 35px;
+  height: 16px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 1px 1px;
+}
+
+.changeTheme div {
+  padding: 7px 7px;
+  background-color: white;
+  border-radius: 7px;
+  transition: all 0.3s;
+}
+
+.move {
+  transform: translate(19px);
+}
+
+.night {
+  background-color: rgb(85, 85, 255);
+}

@@ -1,0 +1,35 @@
+.weatherGeneral {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.generalContent {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.generalContent p {
+  font-size: 75px;
+  font-weight: 200;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-weight: 200;
+}
+
+@media (max-width: 595px) {
+  .weatherGeneral,
+  .city {
+    align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .weatherGeneral h2 {
+    font-size: 20px;
+  }
+}
