@@ -3,10 +3,5 @@
   justify-content: space-between;
   gap: 30px;
   padding-top: 30px;
-}
-
-@media (max-width: 1145px) {
-  .itemsContainer {
-    overflow-x: scroll;
-  }
+  overflow-x: auto;
 }

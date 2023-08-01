@@ -1,6 +1,9 @@
 .image {
-  height: 143%;
+  background-image: url("https://img.freepik.com/premium-vector/background-with-orange-sky_1308-9764.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  width: 100%;
-  position: absolute;
+.night {
+  background-image: url("https://img.freepik.com/premium-vector/planet-space-starry-sky-moon-night-sky-sunset-evening-sky-stars_497922-1149.jpg");
 }

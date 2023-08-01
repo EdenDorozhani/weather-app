@@ -4,8 +4,7 @@ import TodayWeather from "./pages/TodayWeather";
 import WeeklyWeather from "./pages/WeeklyWeather";
 import { useSelector } from "react-redux";
 import classes from "./App.module.css";
-import { modeAction } from "./store";
-import { useDispatch } from "react-redux";
+import ErrorPage from "./pages/Error";
 function App() {
   const state = useSelector((state) => state.mode);
 
@@ -13,6 +12,7 @@ function App() {
     {
       path: "/",
       element: <Root />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -26,21 +26,12 @@ function App() {
     },
   ]);
 
-  let URL;
-
-  if (state) {
-    URL =
-      "https://img.freepik.com/premium-vector/planet-space-starry-sky-moon-night-sky-sunset-evening-sky-stars_497922-1149.jpg";
-  } else {
-    URL =
-      "https://img.freepik.com/premium-vector/background-with-orange-sky_1308-9764.jpg";
-  }
+  const nameClasses = [classes.image, state ? classes.night : null].join(" ");
 
   return (
-    <>
-      <img src={`${URL}`} className={classes.image} />
+    <div className={nameClasses}>
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }
 

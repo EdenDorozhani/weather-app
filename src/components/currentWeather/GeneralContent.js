@@ -11,7 +11,7 @@ const GeneralContent = ({ currentWeather }) => {
         <div className={classes.generalContent}>
           <WeatherIcon type={currentWeather?.icon} />
           <Paragraph>
-            {currentWeather?.temp}
+            {Math.round(currentWeather?.temp)}
             <span>&#176;</span>
           </Paragraph>
         </div>
