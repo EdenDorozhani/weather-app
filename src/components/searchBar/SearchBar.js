@@ -51,7 +51,7 @@ const SearchBar = ({
             className={classNamess}
           />
         </div>
-        {dropDownData.length > 0 && value.length > 3 && (
+        {dropDownData.length > 0 && value.length > 2 && (
           <DropDown dropDownData={dropDownData} dropDownValue={dropDownValue} />
         )}
       </form>
