@@ -7,23 +7,24 @@ import ForecastList from "./ForecastList";
 import { useSelector } from "react-redux";
 import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
 
-const ExtendedWeather = ({ title, weatherData }) => {
-  const state = useSelector((state) => state.mode);
+const ExtendedWeather = ({ title, weatherData, dark }) => {
   const waiting = useSelector((state) => state.waiting);
 
-  const classNames = [classes.button, state ? classes.night : null].join(" ");
+  const classNames = [classes.button, dark ? classes.night : null].join(" ");
 
   return (
     <Container>
       <WeatherContainer>
-        {waiting && <LoadingSpinner />}
+        {waiting && <LoadingSpinner dark={dark} />}
         {!waiting && (
           <>
             <Link to={!title ? "weekly" : "/"}>
               <button className={classNames}>{title ? title : "Weekly"}</button>
             </Link>
-            <Title>Extended Forecast {title ? "Weekly" : "Today"}</Title>
-            <ForecastList weatherData={weatherData} />
+            <Title dark={dark}>
+              Extended Forecast {title ? "Weekly" : "Today"}
+            </Title>
+            <ForecastList dark={dark} weatherData={weatherData} />
           </>
         )}
       </WeatherContainer>

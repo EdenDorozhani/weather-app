@@ -3,20 +3,18 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import classes from "./SearchBar.module.css";
 import { useState } from "react";
 import DropDown from "./DropDown";
-import { useSelector } from "react-redux";
 
 const SearchBar = ({
   getOnSubmitValue,
   getOnChangeValue,
   dropDownData,
   setDropDownData,
+  dark,
 }) => {
   const [value, setValue] = useState("");
 
-  const state = useSelector((state) => state.mode);
-
-  const classNames = [classes.icon, state ? classes.night : null].join(" ");
-  const classNamess = [classes.searchBar, state ? classes.night : null].join(
+  const classNames = [classes.icon, dark ? classes.night : null].join(" ");
+  const classNamess = [classes.searchBar, dark ? classes.night : null].join(
     " "
   );
 
@@ -52,7 +50,11 @@ const SearchBar = ({
           />
         </div>
         {dropDownData.length > 0 && value.length > 2 && (
-          <DropDown dropDownData={dropDownData} dropDownValue={dropDownValue} />
+          <DropDown
+            dark={dark}
+            dropDownData={dropDownData}
+            dropDownValue={dropDownValue}
+          />
         )}
       </form>
     </div>

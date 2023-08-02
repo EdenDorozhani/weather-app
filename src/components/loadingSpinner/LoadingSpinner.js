@@ -1,12 +1,9 @@
-import { useSelector } from "react-redux";
 import classes from "./LoadingSpinner.module.css";
 
-const LoadingSpinner = () => {
-  const state = useSelector((state) => state.mode);
-
+const LoadingSpinner = ({ dark }) => {
   const classNamess = [
     classes.loadingSpinner,
-    state ? classes.night : null,
+    dark ? classes.night : null,
   ].join(" ");
 
   return (

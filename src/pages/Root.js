@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import UseGetWeatherData from "../hook/UseGetWeatherData";
 
-const Root = () => {
+const Root = ({ changeTheme, dark }) => {
   const [inputValue, setInputValue] = useState("");
   const [dropDownData, setDropDownData] = useState("");
   const [onChangeValue, setOnChangeValue] = useState("");
@@ -43,6 +43,10 @@ const Root = () => {
     setOnChangeValue(value);
   };
 
+  const passChangeTheme = () => {
+    changeTheme();
+  };
+
   const formatedCurrentWeather = {
     placeName: weather?.location.name,
     feelsLike: weather?.current.feelslike_c,
@@ -56,16 +60,17 @@ const Root = () => {
   return (
     <>
       <>
-        <HeaderContainer />
+        <HeaderContainer passChangeTheme={passChangeTheme} dark={dark} />
         <SearchBar
           getOnSubmitValue={getOnSubmitValue}
           getOnChangeValue={onChangeHanlder}
           dropDownData={dropDownData}
           setDropDownData={setDropDownData}
+          dark={dark}
         />
-        <CurrentWeather currentWeather={formatedCurrentWeather} />
+        <CurrentWeather currentWeather={formatedCurrentWeather} dark={dark} />
       </>
-      <Outlet context={[inputValue]} />
+      <Outlet context={[inputValue, dark]} />
     </>
   );
 };

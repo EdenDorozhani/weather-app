@@ -1,10 +1,8 @@
-import { useSelector } from "react-redux";
 import classes from "./DropDown.module.css";
 import DropDownItem from "./DropDownItem";
 
-const DropDown = ({ dropDownData, dropDownValue }) => {
-  const state = useSelector((state) => state.mode);
-  const classNames = [classes.dropDown, state ? classes.night : null].join(" ");
+const DropDown = ({ dropDownData, dropDownValue, dark }) => {
+  const classNames = [classes.dropDown, dark ? classes.night : null].join(" ");
 
   return (
     <div className={classNames}>
@@ -16,6 +14,7 @@ const DropDown = ({ dropDownData, dropDownValue }) => {
               key={index}
               data={data}
               index={index}
+              dark={dark}
             />
           );
         })}

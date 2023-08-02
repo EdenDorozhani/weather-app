@@ -5,14 +5,14 @@ import classes from "./CurrentWeather.module.css";
 import Title from "../Wrapers/Title";
 import WeatherContainer from "../Wrapers/WeatherContainer";
 
-const CurrentWeather = ({ currentWeather }) => {
+const CurrentWeather = ({ currentWeather, dark }) => {
   return (
     <Container>
       <WeatherContainer>
-        <Title>Current Weather</Title>
+        <Title dark={dark}>Current Weather</Title>
         <div className={classes.weatherInfo}>
-          <GeneralContent currentWeather={currentWeather} />
-          <DetailedContent currentWeather={currentWeather} />
+          <GeneralContent dark={dark} currentWeather={currentWeather} />
+          <DetailedContent dark={dark} currentWeather={currentWeather} />
         </div>
       </WeatherContainer>
     </Container>

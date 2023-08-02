@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import UseGetWeatherData from "../hook/UseGetWeatherData";
 
 const TodayWeather = () => {
-  const [inputValue] = useOutletContext();
+  const [inputValue, dark] = useOutletContext();
   const { weather } = UseGetWeatherData(
     inputValue,
     "forecast",
@@ -29,7 +29,7 @@ const TodayWeather = () => {
     };
   });
 
-  return <ExtendedWeather weatherData={formatedWeatherHours} />;
+  return <ExtendedWeather weatherData={formatedWeatherHours} dark={dark} />;
 };
 
 export default TodayWeather;

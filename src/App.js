@@ -2,16 +2,26 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/Root";
 import TodayWeather from "./pages/TodayWeather";
 import WeeklyWeather from "./pages/WeeklyWeather";
-import { useSelector } from "react-redux";
 import classes from "./App.module.css";
 import ErrorPage from "./pages/Error";
+import { useEffect, useState } from "react";
 function App() {
-  const state = useSelector((state) => state.mode);
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    const mode = localStorage.getItem("mode") === "true";
+    setDark(mode);
+  }, []);
+
+  const changeTheme = () => {
+    setDark(!dark);
+    localStorage.setItem("mode", !dark);
+  };
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root dark={dark} changeTheme={changeTheme} />,
       errorElement: <ErrorPage />,
       children: [
         {
@@ -26,7 +36,7 @@ function App() {
     },
   ]);
 
-  const nameClasses = [classes.image, state ? classes.night : null].join(" ");
+  const nameClasses = [classes.image, dark ? classes.night : null].join(" ");
 
   return (
     <div className={nameClasses}>

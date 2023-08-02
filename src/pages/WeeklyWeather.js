@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import UseGetWeatherData from "../hook/UseGetWeatherData";
 
 const WeeklyWeather = () => {
-  const [inputValue] = useOutletContext();
+  const [inputValue, dark] = useOutletContext();
   const { weather } = UseGetWeatherData(
     inputValue,
     "forecast",
@@ -27,7 +27,13 @@ const WeeklyWeather = () => {
     };
   });
 
-  return <ExtendedWeather title={"Daily"} weatherData={formatedWeatherDays} />;
+  return (
+    <ExtendedWeather
+      title={"Daily"}
+      weatherData={formatedWeatherDays}
+      dark={dark}
+    />
+  );
 };
 
 export default WeeklyWeather;

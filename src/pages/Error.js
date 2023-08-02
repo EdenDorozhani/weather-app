@@ -1,6 +1,3 @@
-import HeaderContainer from "../components/header/HeaderContainer";
-import SearchBar from "../components/searchBar/SearchBar";
-
 const ErrorPage = () => {
   return (
     <>
