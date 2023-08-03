@@ -1,9 +1,12 @@
 import ExtendedWeather from "../components/extendedForecast/ExtendedWeather";
 import { useOutletContext } from "react-router-dom";
 import UseGetWeatherData from "../hook/UseGetWeatherData";
+import LoadingSpinner from "../components/loadingSpinner/LoadingSpinner";
+import { useSelector } from "react-redux";
 
 const WeeklyWeather = () => {
   const [inputValue, dark] = useOutletContext();
+  const waiting = useSelector((state) => state.waiting);
   const { weather } = UseGetWeatherData(
     inputValue,
     "forecast",
@@ -28,11 +31,16 @@ const WeeklyWeather = () => {
   });
 
   return (
-    <ExtendedWeather
-      title={"Daily"}
-      weatherData={formatedWeatherDays}
-      dark={dark}
-    />
+    <>
+      {waiting && <LoadingSpinner dark={dark} />}
+      {!waiting && (
+        <ExtendedWeather
+          title={"Daily"}
+          weatherData={formatedWeatherDays}
+          dark={dark}
+        />
+      )}
+    </>
   );
 };
 

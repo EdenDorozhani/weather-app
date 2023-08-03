@@ -70,6 +70,7 @@ const Root = ({ changeTheme, dark }) => {
         />
         <CurrentWeather currentWeather={formatedCurrentWeather} dark={dark} />
       </>
+
       <Outlet context={[inputValue, dark]} />
     </>
   );

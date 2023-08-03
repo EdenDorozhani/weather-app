@@ -1,3 +1,5 @@
+import Container from "../Wrapers/Container";
+import WeatherContainer from "../Wrapers/WeatherContainer";
 import classes from "./LoadingSpinner.module.css";
 
 const LoadingSpinner = ({ dark }) => {
@@ -7,9 +9,13 @@ const LoadingSpinner = ({ dark }) => {
   ].join(" ");
 
   return (
-    <div className={classes.spinnerContainer}>
-      <div className={classNamess}></div>
-    </div>
+    <Container>
+      <WeatherContainer>
+        <div className={classes.spinnerContainer}>
+          <div className={classNamess}></div>
+        </div>
+      </WeatherContainer>
+    </Container>
   );
 };
 
