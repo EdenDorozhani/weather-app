@@ -1,6 +1,6 @@
-import Container from "../Wrapers/Container";
+import Container from "../container/Container";
 import classes from "./HeaderContainer.module.css";
-import Header2 from "../Wrapers/Header2";
+import Header2 from "../header2/Header2";
 const HeaderContainer = ({ passChangeTheme, dark }) => {
   const changeThemeHandler = () => {
     passChangeTheme();

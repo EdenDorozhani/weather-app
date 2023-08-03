@@ -1,5 +1,5 @@
-import Container from "../Wrapers/Container";
-import WeatherContainer from "../Wrapers/WeatherContainer";
+import Container from "../container/Container";
+import WeatherContainer from "../weatherContainer/WeatherContainer";
 import classes from "./LoadingSpinner.module.css";
 
 const LoadingSpinner = ({ dark }) => {

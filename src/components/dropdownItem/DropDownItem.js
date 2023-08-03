@@ -1,4 +1,4 @@
-import Paragraph from "../Wrapers/Paragraph";
+import Paragraph from "../paragraph/Paragraph";
 import classes from "./DropDownItem.module.css";
 
 const DropDownItem = ({ data, index, dropDownValue, dark }) => {

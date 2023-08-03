@@ -5,7 +5,7 @@ import {
   faCompress,
 } from "@fortawesome/free-solid-svg-icons";
 import classes from "./DetailedContent.module.css";
-import Paragraph from "../Wrapers/Paragraph";
+import Paragraph from "../paragraph/Paragraph";
 
 const DetailedContent = ({ currentWeather, dark }) => {
   const classNames = [classes.icon, dark ? classes.night : null].join(" ");

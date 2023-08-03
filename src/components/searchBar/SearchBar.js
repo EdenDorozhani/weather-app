@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import classes from "./SearchBar.module.css";
 import { useState } from "react";
-import DropDown from "./DropDown";
+import DropDown from "../dropdown/DropDown";
 
 const SearchBar = ({
   getOnSubmitValue,

@@ -1,5 +1,5 @@
 import classes from "./DropDown.module.css";
-import DropDownItem from "./DropDownItem";
+import DropDownItem from "../dropdownItem/DropDownItem";
 
 const DropDown = ({ dropDownData, dropDownValue, dark }) => {
   const classNames = [classes.dropDown, dark ? classes.night : null].join(" ");

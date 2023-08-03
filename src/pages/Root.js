@@ -10,7 +10,6 @@ const Root = ({ changeTheme, dark }) => {
   const [inputValue, setInputValue] = useState("");
   const [dropDownData, setDropDownData] = useState("");
   const [onChangeValue, setOnChangeValue] = useState("");
-
   const { weather } = UseGetWeatherData(inputValue, "current", "aqi=no");
 
   useEffect(() => {

@@ -1,7 +1,7 @@
-import Header2 from "../Wrapers/Header2";
+import Header2 from "../header2/Header2";
 import classes from "./ForecastItem.module.css";
-import WeatherIcon from "../Wrapers/WeatherIcon";
-import Paragraph from "../Wrapers/Paragraph";
+import WeatherIcon from "../icon/WeatherIcon";
+import Paragraph from "../paragraph/Paragraph";
 
 const ForecastItem = ({ data, dark }) => {
   return (

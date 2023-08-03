@@ -1,4 +1,4 @@
-import ForecastItem from "./ForecastItem";
+import ForecastItem from "../forecastItem/ForecastItem";
 import classes from "./ForecastList.module.css";
 
 const ForecastList = ({ weatherData, dark }) => {

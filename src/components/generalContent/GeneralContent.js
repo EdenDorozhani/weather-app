@@ -1,7 +1,7 @@
 import classes from "./GeneralContent.module.css";
-import Header2 from "../Wrapers/Header2";
-import Paragraph from "../Wrapers/Paragraph";
-import WeatherIcon from "../Wrapers/WeatherIcon";
+import Header2 from "../header2/Header2";
+import Paragraph from "../paragraph/Paragraph";
+import WeatherIcon from "../icon/WeatherIcon";
 
 const GeneralContent = ({ currentWeather, dark }) => {
   return (

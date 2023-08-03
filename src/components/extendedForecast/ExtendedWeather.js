@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import Container from "../Wrapers/Container";
-import Title from "../Wrapers/Title";
-import WeatherContainer from "../Wrapers/WeatherContainer";
+import Container from "../container/Container";
+import Title from "../title/Title";
+import WeatherContainer from "../weatherContainer/WeatherContainer";
 import classes from "./ExtendedWeather.module.css";
-import ForecastList from "./ForecastList";
+import ForecastList from "../forecastList/ForecastList";
 
 const ExtendedWeather = ({ title, weatherData, dark }) => {
   const classNames = [classes.button, dark ? classes.night : null].join(" ");

@@ -1,9 +1,9 @@
-import Container from "../Wrapers/Container";
-import DetailedContent from "./DetailedContent";
-import GeneralContent from "./GeneralContent";
+import Container from "../container/Container";
+import DetailedContent from "../detailedContent/DetailedContent";
+import GeneralContent from "../generalContent/GeneralContent";
 import classes from "./CurrentWeather.module.css";
-import Title from "../Wrapers/Title";
-import WeatherContainer from "../Wrapers/WeatherContainer";
+import Title from "../title/Title";
+import WeatherContainer from "../weatherContainer/WeatherContainer";
 
 const CurrentWeather = ({ currentWeather, dark }) => {
   return (
